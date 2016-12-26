@@ -13,10 +13,13 @@ RUN addgroup ssh
 RUN adduser ssh -D -s /bin/sh -G ssh
 
 # change the pip source to aliyun
+RUN mkdir /home/ssh/.pip
 RUN echo "[global]\
+ \
 index-url = http://mirrors.aliyun.com/pypi/simple/\
+ \
 [install]\
-trusted-host=mirrors.aliyun.com" > ~/.pip/pip.conf
+trusted-host=mirrors.aliyun.com" > /home/ssh/.pip/pip.conf
 
 EXPOSE 22
 ENTRYPOINT ["./run.sh"]
