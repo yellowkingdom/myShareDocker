@@ -2,11 +2,6 @@
 
 KEYGEN=/usr/bin/ssh-keygen
 KEYFILE=/root/.ssh/id_rsa
-#KEYFILE=/etc/ssh/ssh_host_rsa_key
-#KEYFILE=/home/ssh/.ssh/id_rsa
-
-#mkdir -p /root/.ssh/
-#touch /root/.ssh/authorized_keys
 
 if [ ! -f $KEYFILE ]; then
   $KEYGEN -q -t rsa -N "" -f $KEYFILE
