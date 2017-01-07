@@ -5,7 +5,7 @@ MAINTAINER yellowkingdom@live.cn
 RUN sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 # init the openssh service
-RUN apt-get update && apt-get install -y --no-install-recommends openssh \
+RUN apt-get update && apt-get install -y --no-install-recommends openssh-server \
 build-essential \
 libxml2-dev \
 libxslt-dev \
