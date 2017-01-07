@@ -1,11 +1,16 @@
 # maintainer yellowkingdom
 # we use the alpine,keep small
-FROM python:2.7-alpine
+FROM python:2.7
 MAINTAINER yellowkingdom@live.cn
-RUN echo "http://mirrors.ustc.edu.cn/alpine/v3.4/main/" > /etc/apk/repositories
+RUN sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 # init the openssh service
-RUN apk add --no-cache openssh,libxml2,py-lxml
+RUN apt-get update && apt-get install -y --no-install-recommends openssh \
+build-essential \
+libxml2-dev \
+libxslt-dev \
+python-dev
+
 COPY . /app/sshrun/
 RUN chmod +x /app/sshrun/run.sh
 WORKDIR /app/sshrun/
