@@ -3,7 +3,7 @@
 FROM python:2.7
 MAINTAINER yellowkingdom@live.cn
 COPY . /app/sshrun/
-COPY /app/sshrun/sources.list /etc/apt/sources.list
+COPY ./sources.list /etc/apt/sources.list
 
 # init the openssh service
 RUN apt-get update && apt-get install -y --no-install-recommends openssh-server \
