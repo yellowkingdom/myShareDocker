@@ -11,7 +11,8 @@ build-essential \
 python-dev \
 libxml2 \
 libxml2-dev \
-libxslt-dev
+libxslt-dev \
+python-lxml
 
 COPY . /app/sshrun/
 RUN chmod +x /app/sshrun/run.sh
