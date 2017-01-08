@@ -11,7 +11,6 @@ build-essential \
 python-dev \
 libxml2 \
 libxml2-dev \
-libxslt \
 libxslt-dev
 
 COPY . /app/sshrun/
