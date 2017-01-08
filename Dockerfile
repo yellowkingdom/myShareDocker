@@ -8,9 +8,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends openssh-server 
 apt-transport-https \
 ca-certificates \
 build-essential \
+python-dev \
+libxml2 \
 libxml2-dev \
-libxslt-dev \
-python-dev
+libxslt \
+libxslt-dev
 
 COPY . /app/sshrun/
 RUN chmod +x /app/sshrun/run.sh
