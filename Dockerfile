@@ -11,7 +11,7 @@ build-essential \
 python-dev \
 libxml2 \
 libxml2-dev \
-libxslt \
+libxslt1.1 \
 libxslt-dev \
 python-lxml \
 python-libxslt1
