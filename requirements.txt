@@ -1,5 +1,5 @@
 lxml
 numpy
-request
+requests
 pandas
 Django
