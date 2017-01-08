@@ -15,7 +15,6 @@ python-dev
 
 RUN chmod +x /app/sshrun/run.sh
 WORKDIR /app/sshrun/
-RUN addgroup ssh
 RUN adduser ssh -D -s /bin/sh -G ssh
 
 # change the pip source to aliyun
