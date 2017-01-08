@@ -21,6 +21,7 @@ WORKDIR /app/sshrun/
 
 #install the python libs
 RUN pip install -r /app/sshrun/requirements.txt
+RUN pip install tushare
 
 EXPOSE 22
 ENTRYPOINT ["./run.sh"]
