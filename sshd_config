@@ -16,3 +16,5 @@ RSAAuthentication yes
 PubkeyAuthentication yes
 #ChallengeResponseAuthentication no
 PermitEmptyPasswords no
+TCPKeepAlive yes
+ClientAliveCountMax 360
