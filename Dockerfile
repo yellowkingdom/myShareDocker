@@ -4,13 +4,13 @@ FROM python:2.7
 MAINTAINER yellowkingdom@live.cn
 
 # init the openssh service
-RUN apt-get update && apt-get install -y openssh-server \
+RUN apt-get update 
+RUN apt-get build-dep python-lxml
+RUN apt-get install -y openssh-server \
 apt-transport-https \
 ca-certificates \
 build-essential \
 python-dev \
-libxml2 \
-libxml2-dev \
 libxslt1.1 \
 libxslt-dev \
 python-lxml \
