@@ -2,7 +2,8 @@
 # we use the alpine,keep small
 FROM python:2.7
 MAINTAINER yellowkingdom@live.cn
-RUN sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+COPY . /app/sshrun/
+COPY /app/sshrun/sources.list /etc/apt/sources.list
 
 # init the openssh service
 RUN apt-get update && apt-get install -y --no-install-recommends openssh-server \
@@ -11,7 +12,7 @@ libxml2-dev \
 libxslt-dev \
 python-dev
 
-COPY . /app/sshrun/
+
 RUN chmod +x /app/sshrun/run.sh
 WORKDIR /app/sshrun/
 RUN addgroup ssh
