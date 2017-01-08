@@ -4,7 +4,7 @@ FROM python:2.7
 MAINTAINER yellowkingdom@live.cn
 
 # init the openssh service
-RUN apt-get update && apt-get install -y --no-install-recommends openssh-server \
+RUN apt-get update && apt-get install -y openssh-server \
 apt-transport-https \
 ca-certificates \
 build-essential \
