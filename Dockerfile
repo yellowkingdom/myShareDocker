@@ -6,8 +6,8 @@ COPY . /app/sshrun/
 COPY ./sources.list /etc/apt/sources.list
 
 # init the openssh service
-RUN apt-get update && apt-get install -y --no-install-recommends openssh-server \
-apt-utils \
+RUN apt-get update && apt-get install -y apt-utils
+RUN apt-get install -y --no-install-recommends openssh-server \
 apt-transport-https \
 ca-certificates \
 build-essential \
