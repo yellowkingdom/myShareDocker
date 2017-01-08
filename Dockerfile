@@ -20,8 +20,8 @@ RUN chmod +x /app/sshrun/run.sh
 WORKDIR /app/sshrun/
 
 #install the python libs
-RUN pip install -r /app/sshrun/requirements.txt
-RUN pip install tushare
+RUN pip install --no-cache-dir -r /app/sshrun/requirements.txt
+RUN pip install --no-cache-dir tushare
 
 EXPOSE 22
 ENTRYPOINT ["./run.sh"]
