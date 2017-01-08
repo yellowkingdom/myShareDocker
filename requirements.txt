@@ -2,6 +2,4 @@ lxml
 numpy
 request
 pandas
-tushare
 Django
-psycopg2
