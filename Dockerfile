@@ -22,7 +22,7 @@ WORKDIR /app/sshrun/
 
 # change the pip source to aliyun
 RUN mkdir /root/.pip
-RUN mkdir /home/ssh/.pip
+RUN mkdir -p /home/ssh/.pip
 RUN echo "[global]\
  \
 index-url = http://mirrors.aliyun.com/pypi/simple/\
