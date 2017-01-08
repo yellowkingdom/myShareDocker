@@ -4,8 +4,7 @@ FROM python:2.7
 MAINTAINER yellowkingdom@live.cn
 
 # init the openssh service
-RUN apt-get update 
-RUN apt-get build-dep python-lxml
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y openssh-server \
 apt-transport-https \
 ca-certificates \
