@@ -14,9 +14,10 @@ cat $KEYFILE
 
 chmod 600 /root/.ssh/authorized_keys
 
-/usr/sbin/sshd -D -f /app/sshrun/sshd_config
-
 mkdir -p /root/web/ && cd /root/web/
 django-admin startproject mysharesite
 cd /root/web/mysharesite
+
+/usr/sbin/sshd -D -f /app/sshrun/sshd_config &
+
 python manage.py runserver 0.0.0.0:8000 &
