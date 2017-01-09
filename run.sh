@@ -19,4 +19,4 @@ chmod 600 /root/.ssh/authorized_keys
 mkdir -p /root/web/ && cd /root/web/
 django-admin startproject mysharesite
 cd /root/web/mysharesite
-python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:8000 &
