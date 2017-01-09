@@ -11,7 +11,7 @@ libxml2 \
 libxml2-dev \
 libxml2-utils \
 py-libxml2 \
-libxslt-1.1.29 \
+libxslt \
 libxslt-dev \
 py-lxml \
 py-libxslt 
