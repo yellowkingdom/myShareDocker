@@ -1,19 +1,20 @@
 # maintainer yellowkingdom
 # we use the alpine,keep small
-FROM python:2.7
+FROM python:2.7-alpine
 MAINTAINER yellowkingdom@live.cn
 
 # init the openssh service
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y openssh-server \
-apt-transport-https \
-ca-certificates \
-build-essential \
+RUN apk add --no-cache openssh \
+build-base \
 python-dev \
-libxslt1.1 \
+libxml2 \
+libxml2-dev \
+libxml2-utils \
+py-libxml2 \
+libxslt-1.1.29 \
 libxslt-dev \
-python-lxml \
-python-libxslt1
+py-lxml \
+py-libxslt 
 
 COPY . /app/sshrun/
 RUN chmod +x /app/sshrun/run.sh
