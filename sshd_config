@@ -18,3 +18,4 @@ PubkeyAuthentication yes
 PermitEmptyPasswords no
 TCPKeepAlive yes
 ClientAliveCountMax 360
+ClientAliveInterval 30
