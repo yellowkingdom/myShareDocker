@@ -15,7 +15,8 @@ libxslt \
 libxslt-dev \
 py-lxml \
 py-libxslt \
-gfortran
+gfortran \
+Cpython
 
 COPY . /app/sshrun/
 RUN chmod +x /app/sshrun/run.sh
