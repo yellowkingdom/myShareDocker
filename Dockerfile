@@ -1,4 +1,5 @@
 # maintainer yellowkingdom
+# refer from https://github.com/amancevice/pandas/blob/master/core/python2/Dockerfile
 # we use the alpine,keep small
 FROM python:2.7-alpine
 MAINTAINER yellowkingdom@live.cn
@@ -14,8 +15,9 @@ py-libxml2 \
 libxslt \
 libxslt-dev \
 py-lxml \
-py-libxslt \
-gfortran 
+py-libxslt 
+
+RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
 COPY . /app/sshrun/
 RUN chmod +x /app/sshrun/run.sh
