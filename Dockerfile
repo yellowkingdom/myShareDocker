@@ -15,7 +15,8 @@ py-libxml2 \
 libxslt \
 libxslt-dev \
 py-lxml \
-py-libxslt 
+py-libxslt \
+git
 
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
