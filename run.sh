@@ -11,6 +11,9 @@ fi
 echo "== Use this private key to log in =="
 cat $KEYFILE
 
+cd /app/sshrun/
+#switch to alpine branch
+git checkout alpine
 
 chmod 600 /root/.ssh/authorized_keys
 
