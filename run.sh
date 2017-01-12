@@ -11,7 +11,7 @@ fi
 echo "== Use this private key to log in =="
 cat $KEYFILE
 
-# cd /app/sshrun/
+cd /app/sshrun/
 #switch to alpine branch
 #git checkout alpine
 
