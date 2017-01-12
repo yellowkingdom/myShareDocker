@@ -13,4 +13,4 @@ cat $KEYFILE
 
 chmod 600 /root/.ssh/authorized_keys
 
-/usr/sbin/sshd -D -f /app/sshrun/sshd_config &
+/usr/sbin/sshd -D -f /app/sshrun/sshd_config
