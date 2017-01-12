@@ -11,16 +11,6 @@ fi
 echo "== Use this private key to log in =="
 cat $KEYFILE
 
-cd /app/sshrun/
-
-#git checkout alpine
-
 chmod 600 /root/.ssh/authorized_keys
 
-# mkdir -p /root/web/ && cd /root/web/
-#django-admin startproject mysharesite
-#cd /root/web/mysharesite
-
 /usr/sbin/sshd -D -f /app/sshrun/sshd_config &
-
-#python manage.py runserver 0.0.0.0:8000 &
