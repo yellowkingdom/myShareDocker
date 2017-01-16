@@ -25,6 +25,6 @@ touch /var/log/uwsgi/mysite.log
 #start uwsgi
 /usr/sbin/uwsgi --ini /app/sshrun/uwsgi.ini
 
-/usr/sbin/nginx start
+rc-service nginx start
 
 /usr/sbin/sshd -D -f /app/sshrun/sshd_config
