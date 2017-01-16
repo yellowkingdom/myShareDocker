@@ -16,7 +16,11 @@ libxslt \
 libxslt-dev \
 py-lxml \
 py-libxslt \
-git
+git \
+py-django \
+nginx \
+uwsgi \
+uwsgi-python
 
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
@@ -28,5 +32,5 @@ WORKDIR /app/sshrun/
 RUN pip install --no-cache-dir -r /app/sshrun/requirements.txt
 RUN pip install --no-cache-dir tushare
 
-EXPOSE 22 8000
+EXPOSE 22 8000 49152
 ENTRYPOINT ["./run.sh"]
