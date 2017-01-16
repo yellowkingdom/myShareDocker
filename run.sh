@@ -18,14 +18,13 @@ chmod 600 /root/.ssh/authorized_keys
 
 # create a project
 cd /app/sshrun
-/usr/local/bin/django-admin startproject mysite
-cp /app/sshrun/uwsgi_params
+/usr/bin/django-admin startproject mysite
 
 mkdir -p touch /var/log/uwsgi/
 touch /var/log/uwsgi/mysite.log
 #start uwsgi
 /usr/sbin/uwsgi --ini /app/sshrun/uwsgi.ini
 
-/etc/init.d/nginx start
+/usr/sbin/nginx start
 
 /usr/sbin/sshd -D -f /app/sshrun/sshd_config
