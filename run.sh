@@ -1,4 +1,5 @@
 #!/bin/sh
+
 # refer : https://uwsgi-docs.readthedocs.io/en/latest/tutorials/Django_and_nginx.html
 # refer : https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/uwsgi/
 KEYGEN=/usr/bin/ssh-keygen
@@ -25,6 +26,6 @@ touch /var/log/uwsgi/mysite.log
 #start uwsgi
 /usr/sbin/uwsgi --ini /app/sshrun/uwsgi.ini
 
-rc-service nginx start
+/usr/sbin/nginx start
 
 /usr/sbin/sshd -D -f /app/sshrun/sshd_config
