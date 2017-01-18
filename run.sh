@@ -13,19 +13,25 @@ fi
 echo "== Use this private key to log in =="
 cat $KEYFILE
 
-cp -f /app/sshrun/nginx.conf /etc/nginx/nginx.conf
-
 chmod 600 /root/.ssh/authorized_keys
 
 # create a project
 cd /app/sshrun
 /usr/bin/python /usr/bin/django-admin.py startproject mysite
 
+# setup uwsgi dependences
 mkdir -p touch /var/log/uwsgi/
 touch /var/log/uwsgi/mysite.log
 #start uwsgi
 /usr/sbin/uwsgi --ini /app/sshrun/uwsgi.ini
 
-/usr/sbin/nginx
+# nginx settings
+adduser -D -u 1000 -g 'www' www
+cp -f /app/sshrun/nginx.conf /etc/nginx/nginx.conf
+
+chown -R www:www /var/lib/nginx
+chown -R www:www /app/sshrun/mysite
+
+rc-service nginx start
 
 /usr/sbin/sshd -D -f /app/sshrun/sshd_config
