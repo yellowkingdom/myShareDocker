@@ -32,6 +32,6 @@ cp -f /app/sshrun/nginx.conf /etc/nginx/nginx.conf
 chown -R www:www /var/lib/nginx
 chown -R www:www /app/sshrun/mysite
 
-rc-service nginx start
+/usr/bin/rc-service nginx start
 
 /usr/sbin/sshd -D -f /app/sshrun/sshd_config
