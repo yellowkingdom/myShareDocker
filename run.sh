@@ -19,7 +19,7 @@ chmod 600 /root/.ssh/authorized_keys
 
 # create a project
 cd /app/sshrun
-/usr/bin/django-admin startproject mysite
+/usr/sbin/python /usr/sbin/django-admin.py startproject mysite
 
 mkdir -p touch /var/log/uwsgi/
 touch /var/log/uwsgi/mysite.log
