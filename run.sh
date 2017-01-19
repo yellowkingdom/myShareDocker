@@ -28,7 +28,7 @@ touch /var/log/uwsgi/mysite.log
 # nginx settings
 adduser -D -u 1000 -g 'www' www
 cp -f /app/sshrun/nginx.conf /etc/nginx/nginx.conf
-
+#test
 chown -R www:www /var/lib/nginx
 chown -R www:www /app/sshrun/mysite
 
