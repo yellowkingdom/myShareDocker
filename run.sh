@@ -20,7 +20,7 @@ cd /app/sshrun
 /usr/bin/python /usr/bin/django-admin.py startproject mysite
 
 # setup uwsgi dependences
-mkdir -p touch /var/log/uwsgi/
+mkdir -p /var/log/uwsgi/
 touch /var/log/uwsgi/mysite.log
 #start uwsgi
 /usr/sbin/uwsgi --ini /app/sshrun/uwsgi.ini
