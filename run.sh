@@ -20,18 +20,20 @@ cd /app/sshrun
 /usr/bin/python /usr/bin/django-admin.py startproject mysite
 
 # setup uwsgi dependences
-mkdir -p /var/log/uwsgi/
-touch /var/log/uwsgi/mysite.log
+#mkdir -p /var/log/uwsgi/
+#touch /var/log/uwsgi/mysite.log
 #start uwsgi
-/usr/sbin/uwsgi --ini /app/sshrun/uwsgi.ini
+#/usr/sbin/uwsgi --ini /app/sshrun/uwsgi.ini
 
 # nginx settings
-adduser -D -u 1000 -g 'www' www
-cp -f /app/sshrun/nginx.conf /etc/nginx/nginx.conf
+#adduser -D -u 1000 -g 'www' www
+#cp -f /app/sshrun/nginx.conf /etc/nginx/nginx.conf
+
 #test
-chown -R www:www /var/lib/nginx
-chown -R www:www /app/sshrun/mysite
+#chown -R www:www /var/lib/nginx
+#chown -R www:www /app/sshrun/mysite
+#mkdir -p /run/nginx/
 
-/usr/bin/rc-service nginx start
-
-/usr/sbin/sshd -D -f /app/sshrun/sshd_config
+#/usr/sbin/nginx -c /etc/nginx/nginx.conf  & /usr/sbin/sshd -D -f /app/sshrun/sshd_config
+echo "ALLOWED_HOSTS = ['*']" >> /app/sshrun/mysite/mysite/settings.py
+/usr/bin/python /app/sshrun/mysite/manage.py runserver 0.0.0.0:8000 & /usr/sbin/sshd -D -f /app/sshrun/sshd_config

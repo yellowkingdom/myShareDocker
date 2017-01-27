@@ -39,5 +39,8 @@ COPY ./pip.conf /root/.pip/
 RUN pip install --no-cache-dir -r /app/sshrun/requirements.txt
 RUN pip install --no-cache-dir tushare
 
+#cleanup the cache , minimize the image
+RUN rm -rf /tmp/pip-build-root
+
 EXPOSE 22 8000
 ENTRYPOINT ["./run.sh"]
